@@ -29,9 +29,22 @@
 		2513774F2E4E113300F44B42 /* sessionlinkingdemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sessionlinkingdemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2513776E2E4E3D7C00F44B42 /* Exceptions for "sessionlinkingdemo" folder in "sessionlinkingdemo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 251377322E4E113200F44B42 /* sessionlinkingdemo */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		251377352E4E113200F44B42 /* sessionlinkingdemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2513776E2E4E3D7C00F44B42 /* Exceptions for "sessionlinkingdemo" folder in "sessionlinkingdemo" target */,
+			);
 			path = sessionlinkingdemo;
 			sourceTree = "<group>";
 		};
@@ -396,8 +409,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"sessionlinkingdemo/Preview Content\"";
+				DEVELOPMENT_TEAM = UT4A6DW9C9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = sessionlinkingdemo/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need photos";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Need to add";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -408,9 +425,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lm";
 				PRODUCT_BUNDLE_IDENTIFIER = hcos.sessionlinkingdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/sessionlinkingdemo/Session-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -424,8 +443,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"sessionlinkingdemo/Preview Content\"";
+				DEVELOPMENT_TEAM = UT4A6DW9C9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = sessionlinkingdemo/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need photos";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Need to add";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -436,9 +459,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lm";
 				PRODUCT_BUNDLE_IDENTIFIER = hcos.sessionlinkingdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/sessionlinkingdemo/Session-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
