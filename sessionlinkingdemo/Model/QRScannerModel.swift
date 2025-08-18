@@ -14,13 +14,13 @@ import CoreGraphics
 class QRScannerModel: NSObject, ObservableObject, AVCaptureMetadataOutputObjectsDelegate {
     @Published var session = AVCaptureSession()
     @Published var scannedCode: String? // Holds the detected QR code value
+    @Published var stopScanning = false
     
     private let videoCaptureOutput = AVCaptureVideoDataOutput()
     private let metadataOutPut = AVCaptureMetadataOutput()
     
     private var aprilTags: Set<AprilTagDTO> = Set()
     private var qrCodeDto: QRCodeDTO? = nil
-    private var stopScanning = false
     
     
     func checkPermissions() {
@@ -106,6 +106,7 @@ class QRScannerModel: NSObject, ObservableObject, AVCaptureMetadataOutputObjects
                         let data = await sendDataToServer(qrCode: qrCodeDto!, aprilTags: Array(aprilTags), sessionId: qrCodeDto!.session_id)
                         print(String(data: data, encoding: .utf8))
                         globalWebsocketManager.connect(url: URL(string: "wss://stronghold-test.onrender.com/ws/\(qrCodeDto!.session_id)/\(UUID().uuidString)")!)
+                        session.stopRunning()
                     }
                 }
             }
