@@ -105,7 +105,7 @@ class QRScannerModel: NSObject, ObservableObject, AVCaptureMetadataOutputObjects
                     Task {
                         let data = await sendDataToServer(qrCode: qrCodeDto!, aprilTags: Array(aprilTags), sessionId: qrCodeDto!.session_id)
                         print(String(data: data, encoding: .utf8))
-                        
+                        globalWebsocketManager.connect(url: URL(string: "wss://stronghold-test.onrender.com/ws/\(qrCodeDto!.session_id)/\(UUID().uuidString)")!)
                     }
                 }
             }

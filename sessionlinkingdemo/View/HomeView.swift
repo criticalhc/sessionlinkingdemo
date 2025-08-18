@@ -22,13 +22,10 @@ struct HomeView:  View {
                 {
                     cameraModel.checkPermissions()
                 }
+                DrawingCanvasView(viewModel: DrawingCanvasViewModel())
             }
             
-            Button {
-                print("Hello")
-            } label: {
-                Image(systemName: "camera")
-            }
+            
         }
         
         
