@@ -6,5 +6,4 @@
 //
 
 #include "apriltag.h"
-#include "tag36h11.h"
-#include "image_u8.h"
+

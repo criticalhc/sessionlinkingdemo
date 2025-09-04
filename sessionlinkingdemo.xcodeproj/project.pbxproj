@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		251C6EED2E5CFB10005CAD0A /* AprilTagWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 251C6EEC2E5CFB10005CAD0A /* AprilTagWrapper */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		251377462E4E113300F44B42 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251C6EED2E5CFB10005CAD0A /* AprilTagWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +130,7 @@
 			);
 			name = sessionlinkingdemo;
 			packageProductDependencies = (
+				251C6EEC2E5CFB10005CAD0A /* AprilTagWrapper */,
 			);
 			productName = sessionlinkingdemo;
 			productReference = 251377332E4E113200F44B42 /* sessionlinkingdemo.app */;
@@ -208,6 +214,9 @@
 			);
 			mainGroup = 2513772A2E4E113200F44B42;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				251C6EEB2E5CFB10005CAD0A /* XCLocalSwiftPackageReference "../../AprilTagWrapper" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 251377342E4E113200F44B42 /* Products */;
 			projectDirPath = "";
@@ -577,6 +586,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		251C6EEB2E5CFB10005CAD0A /* XCLocalSwiftPackageReference "../../AprilTagWrapper" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../AprilTagWrapper;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		251C6EEC2E5CFB10005CAD0A /* AprilTagWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AprilTagWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2513772B2E4E113200F44B42 /* Project object */;
 }

@@ -10,6 +10,8 @@ import SwiftUI
 import AVFoundation
 import Vision
 import CoreGraphics
+import AprilTagWrapper
+
 
 class QRScannerModel: NSObject, ObservableObject, AVCaptureMetadataOutputObjectsDelegate {
     @Published var session = AVCaptureSession()
@@ -21,6 +23,8 @@ class QRScannerModel: NSObject, ObservableObject, AVCaptureMetadataOutputObjects
     
     private var aprilTags: Set<AprilTagDTO> = Set()
     private var qrCodeDto: QRCodeDTO? = nil
+    
+    private var aprilTagDetector: AprilTagDetector = AprilTagDetector()
     
     
     func checkPermissions() {
@@ -69,36 +73,18 @@ class QRScannerModel: NSObject, ObservableObject, AVCaptureMetadataOutputObjects
     }
     
     func detectTags(in grayscalePixels: UnsafeMutablePointer<UInt8>, width: Int32, height: Int32) {
-        // Create an image_u8_t from raw grayscale data
         var im = image_u8_t(width: width, height: height, stride: width, buf: grayscalePixels)
 
-        // Create detector
-        let tf = tag36h11_create()
-        let td = apriltag_detector_create()
-        apriltag_detector_add_family(td, tf)
+        aprilTagDetector.addFamily(AprilTagFamily(name: "tag36h11")!)
 
-        // Detect
-        let detections = apriltag_detector_detect(td, &im)
+        let detections = aprilTagDetector.detect(image: &im)
         
         
-
-        // Loop through results
-        for i in 0..<Int(zarray_size(detections)) {
-            
-            var detectionPtr: UnsafeMutablePointer<apriltag_detection_t>? = nil
-            
-            zarray_get(detections, Int32(i), &detectionPtr)
-                    
-            if let detection = detectionPtr?.pointee {
+        // Loop through resultsx
+        for detection in detections {
+            print(detection)
                 if aprilTags.count < 5 {
-                    let centre = [detection.c.0, detection.c.1]
-                    let corners = [[detection.p.0.0, detection.p.0.1],
-                                   [detection.p.1.0, detection.p.1.1],
-                                   [detection.p.2.0, detection.p.2.1],
-                                   [detection.p.3.0, detection.p.3.1]]
-                    print("Centre: \(centre)")
-                    print("Corners: \(corners)")
-                    let tag = AprilTagDTO(id: String(detection.id), centre: centre , corners: corners)
+            let tag = AprilTagDTO(id: String(detection.id), centre: [detection.center.0, detection.center.1] , corners: detection.corners.map { [$0.0, $0.1]} )
                     aprilTags.insert(tag)
                 } else {
                     stopScanning = true
@@ -109,13 +95,7 @@ class QRScannerModel: NSObject, ObservableObject, AVCaptureMetadataOutputObjects
                         session.stopRunning()
                     }
                 }
-            }
         }
-        
-        // Cleanup
-        apriltag_detections_destroy(detections)
-        apriltag_detector_destroy(td)
-        tag36h11_destroy(tf)
     }
     
     
