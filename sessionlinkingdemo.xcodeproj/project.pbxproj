@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		251C6EED2E5CFB10005CAD0A /* AprilTagWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 251C6EEC2E5CFB10005CAD0A /* AprilTagWrapper */; };
+		25C55FF22E6DC74700B4C48B /* AprilTagWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 25C55FF12E6DC74700B4C48B /* AprilTagWrapper */; };
+		25C55FF52E6DC7CC00B4C48B /* AprilTagWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 25C55FF42E6DC7CC00B4C48B /* AprilTagWrapper */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25C55FF52E6DC7CC00B4C48B /* AprilTagWrapper in Frameworks */,
+				25C55FF22E6DC74700B4C48B /* AprilTagWrapper in Frameworks */,
 				251C6EED2E5CFB10005CAD0A /* AprilTagWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +135,8 @@
 			name = sessionlinkingdemo;
 			packageProductDependencies = (
 				251C6EEC2E5CFB10005CAD0A /* AprilTagWrapper */,
+				25C55FF12E6DC74700B4C48B /* AprilTagWrapper */,
+				25C55FF42E6DC7CC00B4C48B /* AprilTagWrapper */,
 			);
 			productName = sessionlinkingdemo;
 			productReference = 251377332E4E113200F44B42 /* sessionlinkingdemo.app */;
@@ -215,7 +221,7 @@
 			mainGroup = 2513772A2E4E113200F44B42;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				251C6EEB2E5CFB10005CAD0A /* XCLocalSwiftPackageReference "../../AprilTagWrapper" */,
+				25C55FF32E6DC7CC00B4C48B /* XCLocalSwiftPackageReference "../AprilTagWrapper" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 251377342E4E113200F44B42 /* Products */;
@@ -437,6 +443,9 @@
 				OTHER_LDFLAGS = "-lm";
 				PRODUCT_BUNDLE_IDENTIFIER = hcos.sessionlinkingdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/sessionlinkingdemo/Session-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -471,6 +480,9 @@
 				OTHER_LDFLAGS = "-lm";
 				PRODUCT_BUNDLE_IDENTIFIER = hcos.sessionlinkingdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/sessionlinkingdemo/Session-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -588,14 +600,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		251C6EEB2E5CFB10005CAD0A /* XCLocalSwiftPackageReference "../../AprilTagWrapper" */ = {
+		25C55FF32E6DC7CC00B4C48B /* XCLocalSwiftPackageReference "../AprilTagWrapper" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../AprilTagWrapper;
+			relativePath = ../AprilTagWrapper;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		251C6EEC2E5CFB10005CAD0A /* AprilTagWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AprilTagWrapper;
+		};
+		25C55FF12E6DC74700B4C48B /* AprilTagWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AprilTagWrapper;
+		};
+		25C55FF42E6DC7CC00B4C48B /* AprilTagWrapper */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AprilTagWrapper;
 		};
