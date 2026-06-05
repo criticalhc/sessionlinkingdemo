@@ -1,17 +1,3 @@
-Exploring the project structure and key files to draft an accurate README.
-
-I've added a README.md at the project root. It covers:
-
-Purpose — QR scan + AprilTag detection to link a device session with a remote backend, then stream drawing input over WebSocket
-Requirements — iOS 18, physical device, and the sibling AprilTagWrapper package at ../AprilTagWrapper
-Setup & usage — clone, open in Xcode, scan QR, detect 5 tags, draw on the canvas
-Backend API — endpoints on stronghold-test.onrender.com and payload shapes
-Project structure — folder layout and main components
-If you want changes — e.g. a different AprilTagWrapper URL, license section, or architecture diagram — say what to adjust.
-
-
-
-
 # Session Linking Demo
 An iOS demo app that links a mobile session to a remote session by scanning a QR code, detecting AprilTags in the camera feed, and streaming drawing input over WebSocket.
 ## Overview
